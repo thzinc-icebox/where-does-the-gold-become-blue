@@ -2,22 +2,12 @@
 layout: default
 ---
 
-<div class="home">
+<p class="explanation">
+	Let's answer <a href="https://twitter.com/smartereveryday">@smartereveryday</a>'s question!
+</p>
 
-  <h1 class="page-heading">Posts</h1>
+<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Where does the gold become blue? <a href="https://t.co/tPnFOb6UBq">https://t.co/tPnFOb6UBq</a> <a href="https://t.co/lhErx4h2QJ">pic.twitter.com/lhErx4h2QJ</a></p>&mdash; Smarter Every Day (@smartereveryday) <a href="https://twitter.com/smartereveryday/status/721849385399791622">April 17, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<div id="main"></div>
+<script src="/assets/main.js"></script>

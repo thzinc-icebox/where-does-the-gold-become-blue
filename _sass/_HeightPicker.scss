@@ -1,0 +1,36 @@
+.height-picker {
+	width: 300px;
+	margin: 0 auto;
+	font-size: 1rem;
+}
+
+.height-picker__display {
+	position: relative;
+	height: 400px;
+}
+
+.height-picker__display__image {
+	height: 100%;
+}
+
+.height-picker__display__bar {
+	position: absolute;
+	border-top: solid 1px white;
+	width: 100%;
+	min-height: 1px;
+}
+
+.height-picker__slider {
+	width: 100%;
+	margin: 0;
+}
+
+.height-picker__submit {
+	width: 100%;
+	font-size: 1.3em;
+}
+
+.share-social__submit {
+	width: 100%;
+	font-size: 1.3em;
+}
