@@ -32,7 +32,7 @@ class ShareWidget extends React.Component {
 		var title = `I just answered @smartereveryday's question, "Where does the gold become blue?" (Page by @thzinc) #GoldBecomesBlue`;
 		return (
 			<div className="share-widget">
-				<h1>Share this page!</h1>
+				<h1>Share This!</h1>
 				<div className="share-widget__some-network">
 				  <FacebookShareButton
 					url={shareUrl}

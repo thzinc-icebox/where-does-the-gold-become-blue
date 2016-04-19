@@ -43,17 +43,17 @@ var historyApiFallback = require('connect-history-api-fallback')
 //     .pipe(gulp.dest('./build/css/images'))
 // });
 
-// /*
-//   Browser Sync
-// */
-// gulp.task('browser-sync', function() {
-//     browserSync({
-//         // we need to disable clicks and forms for when we test multiple rooms
-//         server : {},
-//         middleware : [ historyApiFallback() ],
-//         ghostMode: false
-//     });
-// });
+/*
+  Browser Sync
+*/
+gulp.task('browser-sync', function() {
+    browserSync({
+        // we need to disable clicks and forms for when we test multiple rooms
+        server : {},
+        middleware : [ historyApiFallback() ],
+        ghostMode: false
+    });
+});
 
 function handleErrors() {
   var args = Array.prototype.slice.call(arguments);

@@ -1,32 +1,29 @@
-.height-picker {
-	width: 300px;
+.result {
 	margin: 0 auto;
 	font-size: 1rem;
 }
 
-.height-picker__display {
+.result__display {
 	position: relative;
-	height: 400px;
 }
 
-.height-picker__display__image {
+.result__display__image {
 	height: 100%;
 }
 
-.height-picker__display__bar {
+.result__display__bar {
 	position: absolute;
-	border-top: solid 1px white;
+	border-top: solid 1px rgba(255,255,255,0.1);
 	width: 100%;
 	min-height: 1px;
 }
 
-.height-picker__slider {
+.result__slider {
 	width: 100%;
 	margin: 0;
 }
 
-.height-picker__submit,
-.height-picker__view-results {
+.result__submit {
 	width: 100%;
 	font-size: 1.3em;
 }

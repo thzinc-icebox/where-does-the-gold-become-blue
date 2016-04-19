@@ -7,7 +7,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="app-container">
-				<HeightPicker image={this.props.image} imageUrl={this.props.imageUrl}/>
+				<HeightPicker image="where-does-the-gold-become-blue" imageUrl="assets/where-does-the-gold-become-blue.jpg"/>
 			</div>
 		);
 	}

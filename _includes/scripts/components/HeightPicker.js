@@ -2,6 +2,8 @@ import React from 'react';
 import autobind from 'autobind-decorator';
 import Rebase from 're-base';
 import ShareWidget from './ShareWidget';
+import { History } from 'react-router';
+import reactMixin from 'react-mixin';
 
 let base = Rebase.createClass('https://where-does-the-gold.firebaseio.com/');
 
@@ -13,7 +15,6 @@ class HeightPicker extends React.Component {
 		this.state= {
 			height: 50,
 			isSubmitting: false,
-			isSubmitted: false,
 		};
 	}
 
@@ -35,41 +36,21 @@ class HeightPicker extends React.Component {
 				height: this.state.height
 			},
 			then() {
-				self.state.isSubmitted = true;
-				self.state.isSubmitting = false;
-				self.setState({
-					isSubmitted: self.state.isSubmitted,
-					isSubmitting: self.state.isSubmitting
-				});
+				self.history.pushState(null, '/result');
 			}
 		});
 	}
 
-	reset() {
-		this.state.isSubmitted = false;
-		this.setState({
-			isSubmitted: this.state.isSubmitted
-		});
+	goToResult(event) {
+		event.preventDefault();
+
+		this.history.pushState(null, '/result');
 	}
 
-	renderShareInfo() {
-		if (!this.state.isSubmitted) return;
-
+	render() {
 		return (
-			<div class="share-social">
-				<ShareWidget/>
-				<button className="share-social__submit" onClick={this.reset}>
-					Submit Another Choice
-				</button>
-			</div>
-		);
-	}
-
-	renderPicker() {
-		if (this.state.isSubmitted) return;
-
-		return (
-				<div class="height-picker__picker">
+			<div className="height-picker">
+				<div className="height-picker__picker">
 					<div className="height-picker__display">
 						<div
 							className="height-picker__display__bar"
@@ -98,17 +79,11 @@ class HeightPicker extends React.Component {
 						</form>
 					</div>
 				</div>
-			);
-	}
-
-	render() {
-		return (
-			<div className="height-picker">
-				{this.renderShareInfo()}
-				{this.renderPicker()}
 			</div>
 		);
 	}
 }
+
+reactMixin.onClass(HeightPicker, History);
 
 export default HeightPicker;
